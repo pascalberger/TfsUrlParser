@@ -1,22 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/TfsUrlParser/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/TfsUrlParser/assets/img/favicon.ico" type="image/x-icon">
-        <title>TfsUrlParser - Team Foundation Server (TFS) URL parser</title>
+        <title>TfsUrlParser - Examples</title>
         <link href="/TfsUrlParser/assets/css/mermaid.css" rel="stylesheet">
         <link href="/TfsUrlParser/assets/css/highlight.css" rel="stylesheet">
-        <link href="/TfsUrlParser/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/TfsUrlParser/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/TfsUrlParser/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/TfsUrlParser/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/TfsUrlParser/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/TfsUrlParser/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/TfsUrlParser/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/TfsUrlParser/assets/css/override.css" rel="stylesheet" />
+        <link href="/TfsUrlParser/assets/css/override.css" rel="stylesheet">
         <script src="/TfsUrlParser/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/TfsUrlParser/assets/js/bootstrap.min.js"></script>        
         <script src="/TfsUrlParser/assets/js/app.min.js"></script>         
@@ -31,7 +29,7 @@
 
         
     </head>
-    <body class="hold-transition wyam layout-boxed layout-top-nav no-gutter">    
+    <body class="hold-transition wyam layout-boxed  ">    
         <div class="top-banner"></div>
         <div class="wrapper with-container">
             <!-- Header -->
@@ -43,6 +41,10 @@
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
                                         
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -54,7 +56,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li><a href="/TfsUrlParser/docs">Documentation</a></li>
+                                    <li class="active"><a href="/TfsUrlParser/docs">Documentation</a></li>
         <li><a href="/TfsUrlParser/api">API</a></li>
  
                         </ul>       
@@ -66,11 +68,13 @@
             </header>
             
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar hidden">
+            <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/bbtsoftware/TfsUrlParser/tree/develop/docs/input/index.cshtml"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+        <div><p><a href="https://github.com/bbtsoftware/TfsUrlParser/tree/develop/docs/input/docs/usage/examples.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#repositorydescription">RepositoryDescription</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">                    
@@ -78,6 +82,13 @@
 
                     <ul class="sidebar-menu">
                         
+                <li class="treeview active">
+                    <a href="/TfsUrlParser/docs/usage">Usage</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li class="selected"><a href="/TfsUrlParser/docs/usage/examples">Examples</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </section>                
@@ -90,16 +101,23 @@
 
 
 	<section class="content-header">
-		<h1>Team Foundation Server (TFS) URL parser</h1>
+		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		
-<div class="container">				
-	<h1>What is it?</h1>
-    <p>
-        This NuGet package contains code for parsing Team Foundation Server URLs
-    </p>
-</div>
+		<h1 id="repositorydescription">RepositoryDescription</h1>
+<p>To use the Team Foundation Server (TFS) URL parser you need to add the <a href="https://www.nuget.org/packages/TfsUrlParser/">TfsUrlParser NuGet package</a>.</p>
+<pre><code class="language-csharp">    var repositoryDescription =
+        new RepositoryDescription(
+            "http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository");
+    
+    Console.WriteLine(repositoryDescription.ServerUrl);
+    Console.WriteLine(repositoryDescription.CollectionUrl);
+    Console.WriteLine(repositoryDescription.CollectionName);
+    Console.WriteLine(repositoryDescription.ProjectName);
+    Console.WriteLine(repositoryDescription.RepositoryUrl);
+    Console.WriteLine(this.HttpRepositoryRemoteUrl));
+</code></pre>
+
 	</section>
                 
             </div>           
@@ -112,8 +130,8 @@
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
                 <p class="text-muted">
-    Copyright &copy; <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/bbtsoftware/TfsUrlParser/graphs/contributors" target="_blank">contributors</a>.
-    <br/>
+    Copyright © <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/bbtsoftware/TfsUrlParser/graphs/contributors" target="_blank">contributors</a>.
+    <br>
     Website generated by <a href="http://wyam.io" target="_blank">Wyam</a>
 </p>
 
@@ -209,5 +227,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

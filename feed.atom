@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="http://bbtsoftware.github.io/TfsUrlParser" />
+	<id>http://bbtsoftware.github.io/TfsUrlParser</id>
+	<title>TfsUrlParser</title>
+	<rights>2018</rights>
+	<updated>2018-01-15T22:17:45Z</updated>
+</feed>
